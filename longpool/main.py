@@ -46,7 +46,12 @@ class init:
                 lp = BotsLongPoll(self.api, mode=2, group_id=self.group_id)
                 while True:
                     r = await lp.wait()
-                    if r.get('updates') and r['updates'][0]['type'] == 'message_new' and type == "messages":
+                    if r.get('updates'):
+                        if r['updates'][0]['type'] == 'message_new' and type == "messages":
+                            yield await asyncio.ensure_future(parse(r).do(self.mode))
+                        else:
+                            yield await asyncio.ensure_future(parse(r).do(self.mode))
+                    elif type == "ts"
                         yield await asyncio.ensure_future(parse(r).do(self.mode))
 
             except Exception as e:
