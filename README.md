@@ -1,4 +1,4 @@
-# asyncio LongPool of VK
+# asyncio LongPoll of VK
 
 <p align="center">
     <img src="https://img.shields.io/github/license/lixa4-m/vk-LongPool-Python-asyncio?style=for-the-badge">
